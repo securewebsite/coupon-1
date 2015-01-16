@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="cache-control" content="no-cache, must-revalidate"/>
+<meta http-equiv="expires" content="0"/>
+<meta http-equiv="Pragma" contect="no-cache"/>
+<meta name="format-detection" content="telephone=no" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
+<meta name="keywords" content=""/>
+<meta name="description" content=""/>
+<title>兑换券详情</title>
+<link href="font-awesome/css/font-awesome.css" type="text/css" rel="stylesheet">
+<link href="css/detail.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+<div id="BG" class="bg">
+  <form action="" method="post">
+    <div class="box2" id="Box2" style="display:none;">
+      <table class="tab" cellspacing="0" cellpadding="0">
+        <tr>
+          <td align="center" valign="middle"><a onclick="Close()"><img src="images/sign10.png" class="imgs2"/></a> <img src="images/sign2.png" class="imgs"/><br/>
+            <span id="Word"></span></td>
+        </tr>
+      </table>
+      <button type="button" class="btn2" onclick="Black()">返回</button>
+    </div>
+    <div class="box2" id="Box3" style="display:none;">
+    </div>
+  </form>
+</div>
+<div class="main">
+  <div class="con">
+  </div>
+</div>
+<iframe src="dface://init?mode=3" style="display:none"></iframe>
+</body>
+<script type="text/javascript" src="js/jquery-2.1.1.js"></script>
+<script type="text/javascript">
+var password ;
+$(document).ready(function(){
+  document.addEventListener('DfaceJSBridgeReady', function() {
+   DfaceJSBridge.callHandler('getLoc', null, function(response) {
+        detail(response);
+		//detail();
+        shops();
+    })
+ }, false);
+});
+</script>
+<script type="text/javascript" src="js/detail.js"></script>
+<script type="text/javascript">
+function Close(){//关闭
+	$('#BG').hide();
+	$('.box2').hide();
+}
+function Check(){ //兑换码验证提交按钮
+	var val=document.getElementById("Inputs").value;
+	if(password && val!=password){
+		$('#Box2').show();
+		$('#Box3').hide();
+		$('#Word').empty().append('确认码输入错误，请重新输入');
+		return false;
+	}
+	$.ajax({
+		async : false,
+		url: "/wapp/coupon_downs/use",
+		//url: "assets/use.json",
+		data: {id: getUrlParam('id')},
+		type:'get',
+		success: function(data){
+			if(data.succ){
+				document.getElementById("Pic").src=grayscale(document.getElementById("Pic").src);
+				$('#BG').hide();
+				$('#Btn2').hide();
+				$('.word').hide();
+				$('.picbox').append('<span class="used">已使用</span>');
+			}else{
+				if(data.error==1){
+					$('#Box2').show();
+					$('#Box3').hide();
+					$('#Word').empty().append('已使用/已失效');
+				}else{
+					$('#Box2').show();
+					$('#Box3').hide();
+					$('#Word').empty().append('使用失败');
+				}
+			}
+		},
+		error: function(data){
+			$('#Box2').show();
+			$('#Box3').hide();
+			$('#Word').empty().append('网络连接错误，请重试');
+		}
+	})
+}
+
+function Open(){//使用按钮
+  document.getElementById("BG").style.display="block";
+  var documentHeight=document.body.scrollHeight;
+  var windowHeight=document.documentElement.clientHeight;
+  if(documentHeight>windowHeight){
+    document.getElementById("BG").style.height=documentHeight+"px";
+  }else{
+    document.getElementById("BG").style.height=windowHeight+"px";
+  }
+
+  document.getElementById("Box3").style.display="block";
+}
+function Black(){//返回按钮
+  document.getElementById("Box2").style.display="none";
+  document.getElementById("Box3").style.display="block";
+  document.getElementById("Inputs").value="";
+}
+
+
+</script>
+</html>
