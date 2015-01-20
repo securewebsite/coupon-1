@@ -7,8 +7,6 @@ function getcoupon(){
 }
 
 function status(couponUrl,couponData){
-    
-    
 	$.ajax({
 		async : false,
 		type:'get',
@@ -17,7 +15,6 @@ function status(couponUrl,couponData){
 		xhrFields: {
             withCredentials: true
         },
-		crossDomain:true,
 		processData: true,
 		success:function(data){
 			params.status = couponData.status||0;
@@ -104,8 +101,9 @@ function status(couponUrl,couponData){
 				}
 			}
 		},
-		error: function(){
-		    window.location.replace("errorConnection.html");
+		error: function(a, b, c){
+		    alert("get error");
+		   // window.location.replace("errorConnection.html");
 		}
 	}); 
 }
