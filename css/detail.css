@@ -1,0 +1,410 @@
+* {
+	padding: 0px;
+	margin: 0px;
+	outline: none;
+	font-family: "微软雅黑";
+}
+a {
+	text-decoration: none;
+}
+ul, ol, li {
+	list-style: none;
+}
+img {
+	border: none;
+}
+.clear {
+	width: 100%;
+	clear: both;
+	overflow: hidden;
+	height: 0px;
+	display: block;
+}
+.l {
+	float: left;
+}
+.r {
+	float: right;
+}
+.textleft {
+	text-align: left;
+}
+.picbox h3{position:fixed; width:100%; text-align:center; padding:10px 0; color:#fff; font-weight:normal; background: rgba(0,0,0,0.4); z-index:10;}
+.picbox h3 a{color:#fff; position:absolute; left:0px; line-height:150%; left:5%;}
+.bg {
+	position: absolute;
+	width: 100%;
+	background-color: rgba(0,0,0,0.6);
+	z-index: 20;
+}
+.bg2 {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0px;
+	top: 0px;
+	z-index: 1;
+	background-color: rgba(0,0,0,0.6);
+	display: none;
+}
+.mb5 {
+	margin-bottom: 5%;
+}
+.beused img, .belose img {
+}
+.none {
+	display: none !important;
+}
+.block {
+	display: block !important;
+}
+.word {
+	color: #02a9ec;
+	font-size: 18px;
+}
+.title {
+	color: #555;
+	font-size: 28px;
+	margin: 5% 0px;
+	font-weight: normal;
+}
+.title img.imgs {
+	width: 3.8%;
+	margin-right: 3.5%;
+	float: left;
+}
+.title img.imgs2 {
+	width: 4.8%;
+	margin-right: 3.5%;
+	float: left;
+}
+.main {
+	width: 100%;
+	max-width: 640px;
+	margin: 0px auto;
+	position: relative;
+	overflow: hidden;
+}
+.con {
+	width: 100%;
+	overflow: hidden;
+}
+.con .coninner {
+	width: 93%;
+	margin: 0px auto;
+}
+.picbox {
+	width: 100%;
+	position: relative;
+}
+.picbox img {
+	width: 100%;
+	display: block;
+	border-collapse: collapse;
+}
+.picbox .pictitle {
+	position: absolute;
+	left: 0px;
+	bottom: 0px;
+	color: #fff;
+	background-color: rgba(0,0,0,0.4);
+	padding: 0px 3%;
+	line-height: 45px;
+	width: 94%;
+	overflow: hidden;
+	font-size: 18px;
+	z-index: 5;
+}
+.picbox .used {
+	position: absolute;
+	left: 41%;
+	top: 47%;
+	background-color: rgba(255,95,80,0.7);
+	color: #fff;
+	padding: 1% 2%;
+	border-radius: 5px;
+	z-index: 5;
+}
+.picbox .lose {
+	position: absolute;
+	left: 41%;
+	top: 47%;
+	background-color: rgba(0,0,0,0.7);
+	color: #fff;
+	padding: 1% 2%;
+	border-radius: 5px;
+	z-index: 5;
+}
+.picbox.beused .used, .picbox.belose .lose {
+	display: block;
+	font-size: 20px;
+}
+.picbox .picdiv {
+	float: left;
+}
+.pictitle span{ font-family: Arial;}
+.picbox .picdiv2 {
+	float: right;
+}
+.picbox .picdiv3 {
+	text-align:center;
+}
+.inputs {
+	width: 94%;
+	margin: 5% auto 0% auto;
+	color: #adafb1;
+	padding: 3%;
+	border: 1px solid #adafb1;
+	border-radius: 5px;
+	display: block;
+	font-size: 20px;
+}
+.btn {
+	width: 100%;
+	margin: 3% auto 4% auto;
+	color: #fff;
+	padding: 3% 0%;
+	border: 1px solid #02a9ec;
+	background-color: #02a9ec;
+	border-radius: 5px;
+	font-size: 30px;
+	display: block;
+	text-align: center;
+	letter-spacing: 1px;
+	cursor: pointer;
+}
+.btn img {
+	margin-right: 3%;
+	margin-bottom: -2%;
+	width: 12%;
+}
+.btn.disable {
+	background-color: #ccc;
+	border-color: #ccc;
+}
+.btn2 {
+	width: 100%;
+	margin: 3% auto 0% auto;
+	color: #fff;
+	padding: 9px 0%;
+	border: 1px solid #02a9ec;
+	background-color: #02a9ec;
+	border-radius: 0px 0px 5px 5px;
+	font-size: 20px;
+	display: block;
+	text-align: center;
+	letter-spacing: 1px;
+	cursor: pointer;
+}
+.box {
+	width: 92%;
+	background-color: #f3f5f7;
+	border-radius: 5px;
+	font-size: 20px;
+	color: #7a7a7a;
+	line-height: 35px;
+	padding: 4%;
+	font-family: Arial,"微软雅黑";
+}
+.box a{color:#7a7a7a;}
+.box .box2title {
+	display: block;
+	color: #02a9ec;
+	font-size: 20px;
+	clear: both;
+	overflow: hidden;
+}
+.box .box2title h2 {
+	font-size: 24px;
+	float: left;
+	font-weight: normal;
+	margin-bottom: 2%;
+}
+.box .box2title span {
+	float: right;
+}
+.box a.link {
+	color: #02a9ec;
+	float: right;
+	font-size: 14px;
+}
+.box i{margin-right:5px;}
+.telphone {
+	float: right;
+	border: 1px solid #7a7a7a;
+	padding: 2% 3% 2% 10%;
+	border-radius: 5px;
+	margin-left: 3%;
+	color: #7a7a7a;
+	background: url("images/sign9.png") 5% center no-repeat;
+	background-size: 13.5%;
+}
+.telphone .imgs {
+	width: 16.5%;
+}
+.box2 {
+	width: 80%;
+	position: fixed;
+	left: 50%;
+	top: 37%;
+	margin-left: -40%;
+	background-color: #fff;
+	border-radius: 5px;
+}
+.tab {
+	width: 100%;
+	padding: 0px;
+	height: 70.7%;
+	font-size: 22px;
+	color: #7a7a7a;
+	line-height: 35px;
+}
+.tab img.imgs {
+	width: 10.8%;
+}
+.tab img.imgs2 {
+	width: 3.8%;
+	position: absolute;
+	right: 2%;
+	top: 3.5%;
+	cursor: pointer;
+}
+.tab td {
+	padding: 4% 10px 3% 10px;
+}
+.tab td span {
+	font-size: 16px;
+	display: block;
+	color: #02a9ec;
+}
+
+@media (min-width:640px) {
+.box2 {
+	width: 600px;
+	margin-left: -300px;
+}
+}
+
+@media (max-width:540px) {
+.picbox .pictitle {
+	font-size: 16px;
+	line-height: 40px;
+}
+.title {
+	font-size: 24px;
+}
+.btn {
+	font-size: 22px;
+}
+.word {
+	font-size: 16px;
+}
+.box {
+	font-size: 18px;
+}
+}
+
+@media (max-width:480px) {
+.title {
+	font-size: 20px;
+}
+.box {
+	font-size: 16px;
+	line-height: 28px;
+}
+.box .box2title {
+	font-size: 18px;
+}
+.box .box2title h2 {
+	font-size: 22px;
+}
+.btn {
+	font-size: 20px;
+}
+.word {
+	font-size: 15px;
+}
+}
+
+@media (max-width:450px) {
+.tab {
+	font-size: 18px;
+	line-height: 30px;
+}
+.tab td span {
+	font-size: 14px;
+	margin-top: 5px;
+}
+.btn2, .inputs {
+	font-size: 16px;
+}
+.picbox.beused .used, .picbox.belose .lose {
+	font-size: 18px;
+}
+}
+
+@media (max-width:440px) {
+.title {
+	font-size: 16px;
+}
+.title img.imgs, .title img.imgs2 {
+	margin-right: 2.5%;
+}
+.box {
+	font-size: 14px;
+	line-height: 22px;
+}
+.box .box2title {
+	font-size: 14px;
+}
+.box .box2title h2 {
+	font-size: 18px;
+}
+.box a.link {
+	font-size: 12px;
+}
+.word {
+	font-size: 14px;
+}
+.picbox .pictitle {
+	font-size: 14px;
+	line-height: 35px;
+}
+}
+
+@media (max-width:400px) {
+.picbox .pictitle {
+	font-size: 14px;
+	line-height: 35px;
+}
+.btn, .btn2, .inputs {
+	font-size: 14px;
+}
+.word {
+	font-size: 12px;
+}
+.tab {
+	font-size: 16px;
+	line-height: 20px;
+}
+.tab td span {
+	margin-top: 2px;
+}
+.tab img.imgs2 {
+	width: 4.5%;
+}
+.picbox.beused .used, .picbox.belose .lose {
+	font-size: 16px;
+}
+}
+
+@media (max-width:330px) {
+.picbox .pictitle {
+	font-size: 12px;
+	line-height: 30px;
+}
+.telphone {
+	margin-top: 10px;
+}
+}
+.back{color:#02a9ec;float:right;font-size:14px;margin-bottom:5%;clear:both;}

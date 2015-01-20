@@ -1,0 +1,157 @@
+@charset "utf-8";
+/* CSS Document */
+/**********rest********/
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, button, textarea, p, blockquote, th, td {
+	margin: 0;padding: 0;
+}
+fieldset, img {border: 0;}
+abbr, acronym {border: 0;font-variant: normal;}
+body {line-height: 1.5;}
+ol, ul {list-style: none;}
+table {border-collapse: collapse; border-spacing: 0;}
+caption, th {text-align: left;}
+sup, sub {font-size: 100%; vertical-align: baseline;}
+blockquote, q {quotes: none;}
+blockquote:before, blockquote:after, q:before, q:after {content: ''; content: none;}
+:link, :visited {text-decoration: none;}
+:focus {outline: 0;}
+body{ font-family:Arial,'Microsoft YaHei'; font-size:16px;}
+.clear{clear:both;}
+.wrap{max-width:680px; margin:0 auto;}
+/****menu****/
+.menu{width:100%; padding:10px 0; background:#02a9ec; position:relative;}
+.menu a{position:absolute; color:#fff; left:0px; line-height:150%; left:5%; -webkit-tap-highlight-color:rgba(2,169,236,0);}
+.menu h3{width:100%; color:#fff; text-align:center; font-weight:normal;}
+.top{width:100%; background:#25befa; z-index:10; padding:10px 0;}
+.topNav li{float:left; width:49%; text-align:center; font-size:100%; color:#fff; cursor:pointer; -webkit-tap-highlight-color:rgba(2,169,236,0);}
+.navli{display:block;}
+.rightBorder{border-right:#92dffd 1px solid;}
+.all_zt,.all_lx{position:fixed; width:100%; z-index:10; top:88px; left:0px; display:none;} 
+.all_zt .jianjiao{height:18px; width:50%; display:block; text-align:center; position:relative; top:2px;}
+.secNav{margin:0 20px; background:#dff6fe; border:#b0dff3 1px solid; border-radius:8px; padding:10px;}
+.secNav li{border-bottom:#b0dff3 1px solid; text-align:center; font-size:80%; padding:8px 0; float:none; width:100%;}
+.secNav li a{ color:#555; display:block; cursor:pointer;}
+.secNav li a:hover{color:#02a9ec;}
+.all_lx .jianjiao{height:18px; width:50%; display:block; text-align:center; position:relative; left:50%; top:2px;}
+/*****main*******/
+.mainList{background:#fff; padding:20px 0;}
+.topclip{width:90%; background:#f3f5f7; padding:20px 0; border:#dce0e2 1px solid; border-radius:10px; text-align:center; font-size:100%; margin:0 auto; position:relative; z-index:10;}
+.topclip a{ background:url(../images/123.png) no-repeat 0px; padding-left:60px; color:#555;}
+#wrapper {position:absolute; z-index:1; top:88px; bottom:0px; width:100%; overflow:auto; background:#ebf1f6;}
+.statusHide{animation: statusHide 1s forwards; -moz-animation: statusHide 1s forwards; -webkit-animation: statusHide 1s forwards; -o-animation: statusHide 1s forwards;}
+@keyframes statusHide{
+	from{top:88px;}
+	to  {top:44px;}
+	}
+@-moz-keyframes statusHide{
+	from{top:88px;}
+	to  {top:44px;}
+	}
+@-webkit-keyframes statusHide{
+	from{top:88px;}
+	to  {top:44px;}
+	}
+@-o-keyframes statusHide{
+	from{top:88px;}
+	to  {top:44px;}
+	}
+.statusShow{animation: statusShow 1s forwards; -moz-animation: statusShow 1s forwards; -webkit-animation: statusShow 1s forwards; -o-animation: statusShow 1s forwards;}
+@keyframes statusShow{
+	from{top:44px;}
+	to  {top:88px;}
+	}
+@-moz-keyframes statusShow{
+	from{top:44px;}
+	to  {top:88px;}
+	}
+@-webkit-keyframes statusShow{
+	from{top:44px;}
+	to  {top:88px;}
+	}
+@-o-keyframes statusShow{
+	from{top:44px;}
+	to  {top:88px;}
+	}
+
+#scroller{ overflow:auto; min-height:100%;}
+/*******couponList Public*********/
+.couponList{position:relative; }
+.couponListCon{ background:#f3f5f7; border-left:#dce0e2 1px solid; border-top:#dce0e2 1px solid; border-right:#dce0e2 1px solid; border-top-left-radius:10px; border-top-right-radius:10px;}
+.couponListCon p{color:#b7bdc5; text-align:center; margin-top:5px; font-size:80%; overflow:hidden; height:20px;}
+.couponInfo h3{color:#02a9ec; text-align:center; font-weight:normal; overflow:hidden; height:24px; font-size:16px;}
+.couponInfo span{color:#555; display:block; text-align:center; border-bottom:#dce0e2 1px solid; padding-bottom:5px; margin-top:5px; font-size:12px;}
+.couponListImg img{width:100%; float:left;}
+.news{position:absolute; top:0; left:0;}
+.status{position:absolute;left:0;top:0; width:100%; height:100%;color:#fff;z-index:5;text-align: center;}
+.status span{margin-top: 45%; padding: 1px 5px; display:inline-block; border-radius:5px;}
+.used span{ background-color:rgba(255,95,80,0.7);}
+.losed span{background-color:rgba(0,0,0,0.7);}
+.bg2{position:absolute;width:100%;height:100%;left:0px;top:0px;background-color:rgba(0,0,0,0.6);}
+.bot{background:url(../images/bot.png) repeat-x; width:100%; height:5px; overflow:hidden;}
+/*********花钱够***********/
+.ticketList1{width:90%;margin:0 auto; margin-top:20px;}
+.ticketList1 .couponListCon{width:96%; padding:2%;}
+.ticketList1 .couponListImg{float:left; position:relative; width:45%;}
+.ticketList1 .couponListImg a{display:block;}
+.ticketList1 .couponInfo{ margin-left:50%;}
+.ticketList1 .couponInfo span{ margin-top:20px;}
+.ticketList1 .couponInfo h3{margin-top:10px;}
+/*********免费够***********/
+.ticketList2{margin-top:20px; float:left; margin-left:5%; width:42.5%;}
+.ticketList2 .couponListCon{width:92%; padding:4%;}
+.ticketList2 .couponInfo{float:left; margin-top:10px;}
+.ticketList2 .couponListImg{width:100%; position:relative; float:left;}
+/**********优惠券为空**************/
+.noclip{text-align:center; width:100%; height:135px; position: absolute; top: 50%; margin-top: -45px;}
+.nopic{ margin-top:15px;}
+.nolist{ position:absolute; left:70%; top:0;}
+.notxt{font-size:16px; color:#97aab8; text-align:center;font-size: 16px; margin-top:50px; }
+.reload{width:33%; background:#02a9ed; border-radius:3px; display:block; margin:50px auto; color:#fff; font-size:18px; text-align:center; padding:15px 10px;}
+
+.scrollheight{height:0px;}
+/***********loading**********************/
+#pullDown{ width:100%; height:150px; text-align:center; position:relative; overflow:hidden;}
+.pullDownLabel{width:100%; height:150px;}
+@media (max-width:450px) {
+	#pullDown{ width:100%; height:60px;}
+	.pullDownLabel{width:100%; height:60px;}
+	.news img{width:50px;}
+}
+.pullDownLabel p{color:#bfbfbf; font-size:80%;}
+#pullUp{display:none;}
+#logo{height:50%; position:relative;}
+.loadingLogo{position:relative; animation:logo 2s linear 0s infinite alternate;
+-moz-animation:logo 2s linear 0s infinite alternate;
+-webkit-animation:logo 2s linear 0s infinite alternate;
+-o-animation:logo 2s linear 0s infinite alternate; position:relative;}
+@keyframes logo{
+	0%   {top:50%;}
+	25%  {top:25%;}
+	50%  {top:0%;}
+	75%  {top:25%;}
+	100% {top:50%;}
+	}
+@-moz-keyframes logo{
+	0%   {top:50%;}
+	25%  {top:25%;}
+	50%  {top:0%;}
+	75%  {top:25%;}
+	100% {top:50%;}
+	}
+@-webkit-keyframes logo{
+	0%   {top:50%;}
+	25%  {top:25%;}
+	50%  {top:0%;}
+	75%  {top:25%;}
+	100% {top:50%;}
+	}
+@-o-keyframes logo{
+	0%   {top:50%;}
+	25%  {top:25%;}
+	50%  {top:0%;}
+	75%  {top:25%;}
+	100% {top:50%;}
+	}
+	
+.falling{position:absolute; top:0px; left:0;}
+

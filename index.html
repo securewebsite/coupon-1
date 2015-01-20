@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="HandheldFriendly" content="true">
+<title>兑换券</title>
+<link href="css/style.css" type="text/css" rel="stylesheet">
+<link href="font-awesome/css/font-awesome.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+<div id="top">
+	<div class="menu">
+    	<h3>我的券<a class="fa fa-chevron-left" href="dface://close"></a></h3>
+	</div>
+    <div class="top">
+        <ul class="topNav">
+            <li class="rightBorder" id="zz_title"><span class="navli">未使用</span>
+                <div class="all_zt" id="all_zt">
+                    <span class="jianjiao"><img src="images/jianjiao.png"></span>
+                    <ul class="secNav">
+                        <li id="allzt"><a href="javascript:;">全部状态</a></li>
+                        <li id="unUsed"><a href="javascript:;">未使用</a></li>
+                        <li id="aUsed"><a href="javascript:;">已使用</a></li>
+                        <li id="invalid"><a href="javascript:;">已失效</a></li>
+                     </ul>
+                </div>
+            </li>
+            <li id="lx_title"><span class="navli" onClick="this.blur()">全部类型</span>
+                <div class="all_lx" id="all_lx">
+                    <span class="jianjiao"><img src="images/jianjiao.png"></span>
+                    <ul class="secNav">
+                        <li id="alllx"><a href="javascript:;">全部类型</a></li>
+                        <li id="myCoupon"><a href="javascript:;">花钱购</a></li>
+                        <li id="freeCoupon"><a href="javascript:;">免费领</a></li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    	<div class="clear"></div>
+    </div>
+</div>
+<div class="noclip nocoupon"></div>
+<div id="wrapper">
+   <div id="scroller">
+    	<div id="pullDown">
+			<div class="pullDownLabel"></div>
+		</div>
+        <div class="mainList">
+            <div class="wrap">
+                <div class="topclip"> <a href="http://dface.cn/coupon_code">使用兑换码？猛戳这里</a> </div>
+                <div class="useMoney"></div>
+                <div class="freeReceive" id="freeReceive"></div>
+                <div class="clear"></div>
+            </div>
+ 		</div>
+        
+        <div id="pullUp">
+			<span class="pullUpIcon"></span><span class="pullUpLabel">上拉加载更多...</span>
+		</div>
+        
+	</div>
+</div>
+<iframe src="dface://init?mode=3" style="display:none"></iframe>
+<script type="text/javascript">
+var statusValue;
+var typeValue;
+var couponId = 123;
+var coupon;
+var params = {page: 1 , status:typeValue , type:typeValue}
+var last_page = true;
+</script>
+<script type="text/javascript" src="js/jquery-2.1.1.js"></script>
+<script type="text/javascript" src="js/dface.js" ></script>
+<script type="text/javascript" src="js/iscroll.js"></script>
+<script type="text/javascript" src="js/myScroll.js"></script>
+<script type="text/javascript" src="js/jquery.lazyload.js"></script>
+<script type="text/javascript" src="js/coupon.js" ></script>
+<script type="text/javascript">
+	    callbackResult = function(result) {
+        switch (result) {
+            case 0:
+                getcoupon();
+                tab();
+                pipEffects();
+				pullDownAction();
+                break;
+            case -1:
+                alert("会话已过期");
+                break;
+            case -2:
+                alert("调用客户端获取session失败");
+                break;
+            }
+        
+        }
+        dface.startup(0, callbackResult);
+</script>
+</body>
+</html>
