@@ -3,15 +3,14 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-<meta name="HandheldFriendly" content="true">
 <title>兑换券</title>
 <link href="css/style.css" type="text/css" rel="stylesheet">
-<link href="font-awesome/css/font-awesome.css" type="text/css" rel="stylesheet">
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" type="text/css" rel="stylesheet">
 </head>
 <body>
 <div id="top">
 	<div class="menu">
-    	<h3>我的券<a class="fa fa-chevron-left" href="dface://close"></a></h3>
+    	<h3>我的券<a class="fa fa-chevron-left close" href="javascript:;" ></a></h3>
 	</div>
     <div class="top">
         <ul class="topNav">
@@ -61,7 +60,6 @@
         
 	</div>
 </div>
-<iframe src="dface://init?mode=3" style="display:none"></iframe>
 <script type="text/javascript">
 var statusValue;
 var typeValue;
@@ -70,31 +68,41 @@ var coupon;
 var params = {page: 1 , status:typeValue , type:typeValue}
 var last_page = true;
 </script>
-<script type="text/javascript" src="js/jquery-2.1.1.js"></script>
-<script type="text/javascript" src="js/dface.js" ></script>
-<script type="text/javascript" src="js/iscroll.js"></script>
+<script type="text/javascript" src="http://static.dface.cn/js/jquery-2.1.1.js"></script>
+<script type="text/javascript" src="http://static.dface.cn/js/dface.js" ></script>
+<script type="text/javascript" src="http://static.dface.cn/js/iscroll.js"></script>
 <script type="text/javascript" src="js/myScroll.js"></script>
-<script type="text/javascript" src="js/jquery.lazyload.js"></script>
+<script type="text/javascript" src="http://static.dface.cn/js/jquery.lazyload.js"></script>
 <script type="text/javascript" src="js/coupon.js" ></script>
 <script type="text/javascript">
-	    callbackResult = function(result) {
+    startupResult = function (result) {
         switch (result) {
-            case 0:
+            case dface.startupResult.ok:
                 getcoupon();
                 tab();
                 pipEffects();
 				pullDownAction();
+                dface.getFriends(myGetFriends);
                 break;
-            case -1:
+            case dface.startupResult.session_expired:
                 alert("会话已过期");
                 break;
-            case -2:
-                alert("调用客户端获取session失败");
+            case dface.startupResult.no_sid:
+                alert("获取不到当前sid");
                 break;
-            }
-        
+            case dface.startupResult.no_uid:
+                alert("获取不到当前uid");
+                break;
+            case dface.startupResult.no_session:
+                alert("获取不到当前session");
+                break;
+            default:
+                alert("dface.js 内部错误");
+                break;
         }
-        dface.startup(0, callbackResult);
+
+    };
+    dface.startup(dface.showMode.fullscreen, startupResult);
 </script>
 </body>
 </html>

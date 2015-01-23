@@ -1,14 +1,11 @@
 
 function getcoupon(){
 	status('http://dface.cn/wapp/coupon_downs?Access-Control-Allow-Origin=1',{status:"1"});
-	
 	//status('assets/coupon5.json',{status:"0"});
 	statusValue = 0;
 }
 
 function status(couponUrl,couponData){
-    
-    
 	$.ajax({
 		async : false,
 		type:'get',
@@ -17,9 +14,10 @@ function status(couponUrl,couponData){
 		xhrFields: {
             withCredentials: true
         },
-		crossDomain:true,
 		processData: true,
 		success:function(data){
+		    console.log(data);
+		    
 			params.status = couponData.status||0;
 			params.type = couponData.type||0;
 			params.page += 1;
@@ -104,8 +102,9 @@ function status(couponUrl,couponData){
 				}
 			}
 		},
-		error: function(){
-		    window.location.replace("errorConnection.html");
+		error: function(a, b, c){
+		    alert("get error " + c );
+		   // window.location.replace("errorConnection.html");
 		}
 	}); 
 }

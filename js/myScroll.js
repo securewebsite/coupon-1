@@ -16,7 +16,7 @@ function pullDownAction () {
 function pullUpAction () {
 		// <-- Simulate network congestion, remove setTimeout from production!
 	if(!last_page){
-		status('/wapp/coupon_downs', params);
+		status('http://dface.cn/wapp/coupon_downs?Access-Control-Allow-Origin=1', params);
 		pipEffects();
 		myScroll.refresh();		// 数据加载完成后，调用界面更新方法 Remember to refresh when contents are loaded (ie: on ajax completion)
 	// <-- Simulate network congestion, remove setTimeout from production!

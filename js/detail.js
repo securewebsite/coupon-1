@@ -1,7 +1,7 @@
 var renderCoupon = function(item){
 	var couponDetail='';
 		couponDetail +='<div class="picbox" id="PicBox"> '
-		couponDetail +='<h3>'+item.name+'<a class="fa fa-chevron-left" href="javascript:;"></a></h3>'
+		couponDetail +='<h3>'+item.name+'<a class="fa fa-chevron-left" href="javascript:window.history.go(-1);"></a></h3>'
 	if(item.status== "2"){
 		couponDetail += '<span class="used">已使用</span>';
 		couponDetail +='<img src="'+ grayscale(item.img) +'" id="Pic"/>'
@@ -85,7 +85,6 @@ var renderCoupon = function(item){
 function detail(loc){
 	var id = getUrlParam('id');
 	$.ajax({
-		async : false,
 		type:'get',
 		url:'http://dface.cn/wapp/coupon_downs/show?id='+ id + '&Access-Control-Allow-Origin=1',
 		//url:'assets/detail.json',
@@ -101,7 +100,7 @@ var getUrlParam = function (name) {
 		var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
 		var r = window.location.search.substr(1).match(reg);
 		if (r != null) return unescape(r[2]); return null;
-}
+};
 //图片处理
 function grayscale(src){
   try{
@@ -146,9 +145,9 @@ function shops(){
 	$(".back").click(function(){
 		 location.reload();	
 	})
-	
-	$('.picbox h3 a').click(function(evt){
-		//evt.preventDefault(); // 阻止默认的跳转操作
-		window.history.go(-1);
-	})
 }
+
+$('.picbox h3 a').click(function(){
+	//evt.preventDefault(); // 阻止默认的跳转操作
+	window.history.go(-1);
+});

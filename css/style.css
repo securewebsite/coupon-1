@@ -20,7 +20,7 @@ body{ font-family:Arial,'Microsoft YaHei'; font-size:16px;}
 .wrap{max-width:680px; margin:0 auto;}
 /****menu****/
 .menu{width:100%; padding:10px 0; background:#02a9ec; position:relative;}
-.menu a{position:absolute; color:#fff; left:0px; line-height:150%; left:5%; -webkit-tap-highlight-color:rgba(2,169,236,0);}
+.menu a{position:absolute; color:#fff; left:0px; line-height:28px; left:5%; -webkit-tap-highlight-color:rgba(2,169,236,0);}
 .menu h3{width:100%; color:#fff; text-align:center; font-weight:normal;}
 .top{width:100%; background:#25befa; z-index:10; padding:10px 0;}
 .topNav li{float:left; width:49%; text-align:center; font-size:100%; color:#fff; cursor:pointer; -webkit-tap-highlight-color:rgba(2,169,236,0);}
