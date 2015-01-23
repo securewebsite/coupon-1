@@ -103,8 +103,7 @@ function status(couponUrl,couponData){
 			}
 		},
 		error: function(a, b, c){
-		    alert("get error " + c );
-		   // window.location.replace("errorConnection.html");
+		   window.location.replace("errorConnection.html");
 		}
 	}); 
 }
