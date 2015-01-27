@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
 <title>兑换券</title>
 <link href="css/style.css" type="text/css" rel="stylesheet">
-<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" type="text/css" rel="stylesheet">
+<link href="font-awesome/css/font-awesome.min.css" type="text/css" rel="stylesheet">
 </head>
 <body>
 <div id="top">
@@ -82,20 +82,20 @@ var last_page = true;
                 tab();
                 pipEffects();
 				pullDownAction();
-                dface.getFriends(myGetFriends);
+                //dface.getFriends(myGetFriends);
                 break;
             case dface.startupResult.session_expired:
                 alert("会话已过期");
                 break;
-            case dface.startupResult.no_sid:
-                alert("获取不到当前sid");
-                break;
-            case dface.startupResult.no_uid:
-                alert("获取不到当前uid");
-                break;
-            case dface.startupResult.no_session:
-                alert("获取不到当前session");
-                break;
+           //case dface.startupResult.no_sid:
+           //     alert("获取不到当前sid");
+           //     break;
+           // case dface.startupResult.no_uid:
+           //     alert("获取不到当前uid");
+           //     break;
+           // case dface.startupResult.no_session:
+           //     alert("获取不到当前session");
+           //     break;
             default:
                 alert("dface.js 内部错误");
                 break;
