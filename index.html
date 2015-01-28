@@ -47,7 +47,7 @@
 		</div>
         <div class="mainList">
             <div class="wrap">
-                <div class="topclip"> <a href="http://dface.cn/coupon_code">使用兑换码？猛戳这里</a> </div>
+                <div class="topclip"> <a href="http://coupon.dface.cn/coupon_code.html?from=dface">使用兑换码？猛戳这里</a> </div>
                 <div class="useMoney"></div>
                 <div class="freeReceive" id="freeReceive"></div>
                 <div class="clear"></div>
@@ -63,7 +63,7 @@
 <script type="text/javascript">
 var statusValue;
 var typeValue;
-var couponId = 123;
+var couponId = 0;
 var coupon;
 var params = {page: 1 , status:typeValue , type:typeValue}
 var last_page = true;
@@ -84,25 +84,20 @@ var last_page = true;
 				pullDownAction();
                 //dface.getFriends(myGetFriends);
                 break;
-            case dface.startupResult.session_expired:
-                alert("会话已过期");
+            case dface.startupResult.no_session:
+                alert("获取不到session");
                 break;
-           //case dface.startupResult.no_sid:
-           //     alert("获取不到当前sid");
-           //     break;
-           // case dface.startupResult.no_uid:
-           //     alert("获取不到当前uid");
-           //     break;
-           // case dface.startupResult.no_session:
-           //     alert("获取不到当前session");
-           //     break;
+            case dface.startupResult.session_expired:
+                alert("session 过期");
+                break;
             default:
                 alert("dface.js 内部错误");
                 break;
         }
-
     };
-    dface.startup(dface.showMode.fullscreen, startupResult);
+
+    dface.showMode(dface.initMode.fullscreenNew);
+    dface.cors(startupResult);
 </script>
 </body>
 </html>

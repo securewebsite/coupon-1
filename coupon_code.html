@@ -1,0 +1,161 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+      <meta http-equiv="cache-control" content="no-cache, must-revalidate"/>
+      <meta http-equiv="expires" content="0"/>
+      <meta http-equiv="Pragma" contect="no-cache"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
+      <meta name="keywords" content=""/>
+      <meta name="description" content=""/>
+	  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+      <title>兑换券</title>
+  </head>
+  <body>
+<div id="top">
+	<div class="menu">
+    	<h3>兑换券<a class="fa fa-chevron-left" onclick="javascript:history.go(-1)"></a></h3>
+	</div>
+</div>
+<div id="BG" class="bg" style="display:none;">
+  <div class="box" id="Box1" style="display:none;">
+    <table class="tab p_mt1 p_mb3" cellspacing="0" cellpadding="0">
+      <tr>
+        <td align="center" valign="middle">
+          <a onclick="Close()"><img src="images/sign4.png" class="imgs2"/></a>
+          <img src="images/sign11.png" class="imgs"/><br/>哎呀你来晚了，券被抢走了<br/>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div class="box" id="Box2" style="display:none;">
+    <table class="tab p_mt1 p_mb3" cellspacing="0" cellpadding="0">
+     <tr>
+        <td align="center" valign="middle">
+          <a onclick="Close()"><img src="images/sign4.png" class="imgs2"/></a>
+          <img src="images/sign12.png" class="imgs"/><br/>
+          <span id="Word">请输入正确的兑换码</span>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div class="box" id="Box3" style="display:none;">
+    <table class="tab" cellspacing="0" cellpadding="0">
+      <tr>
+        <td align="center" valign="middle">
+          <a onclick="Close()"><img src="images/sign4.png" class="imgs2"/></a>
+          <img src="images/sign13.png" class="imgs"/><br/>恭喜，兑换成功啦！
+        </td>
+      </tr>
+    </table>
+    <a href="dface://scheme/record/coupon" class="btn btn-change">查看券</a>
+  </div>
+</div>
+
+    <div class="main">
+      <div class="con">
+        <form action="" method="post">
+          <!--input value="输入兑换码" 兼容国产手机低版本。-->
+          <input type="text" id="Inputs" class="inputs" placeholder="输入兑换码" value="输入兑换码" />
+          <button type="button" class="btn"  onclick="Check()">确定</button>
+        </form>
+      </div>
+    </div>
+  </body>
+<style>
+      *{padding: 0px;margin: 0px; outline: none;font-family:"微软雅黑";}
+      a{text-decoration: none;}
+      ul,ol,li{list-style: none;}
+      img{border:none;}
+      .clear{width:100%;clear:both;overflow: hidden; height: 0px;}
+	  .menu{width:100%; padding:10px 0; background:#02a9ec; position:relative;}
+		.menu a{position:absolute; color:#fff; left:0px; line-height:150%; left:5%; -webkit-tap-highlight-color:rgba(2,169,236,0);}
+		.menu h3{width:100%; color:#fff; text-align:center; font-weight:normal;}
+      .l{float:left;}
+      .r{float:right;}
+      .bg{position:fixed;width:100%;height:100%;background-color:rgba(0,0,0,0.6);z-index:20;}
+      .none{display:none !important;}
+      .block{display:block !important;}
+      .p_mt1{margin-top:1% !important;}
+      .p_mb3{margin-bottom:3% !important;}
+      .main{width:100%;max-width:640px;margin:0px auto;position:relative;overflow:hidden;}
+      .con{width:100%;overflow:hidden;}
+      .inputs{width:80%;margin:5% auto;color:#adafb1;padding:3%;border:1px solid #adafb1;border-radius:5px;display:block;font-size:20px;}
+      .btn{width:86%;margin:3% auto 0% auto;color:#fff;padding:3% 0%;border:1px solid #02a9ec;background-color:#02a9ec;border-radius:5px;font-size:20px;display:block;text-align:center;letter-spacing:1px;cursor:pointer;}
+      .btn-change{margin-bottom:3%;}
+      .box{width:80%;position:fixed;left:50%;top:50%;margin-left:-40%;margin-top:-10%;background-color:#fff;border-radius:5px;}
+
+      .tab{width:100%;padding:0px;height:70.7%;font-size:22px;color:#7a7a7a;line-height:35px;}
+      .tab img.imgs{width:16.5%;}
+      .tab img.imgs2{width:10%;position:absolute;right:-5%;top:-5%;cursor:pointer;}
+      .tab td{padding:4% 0px 3% 0px;}
+
+      @media (min-width:640px){
+        .box{width:600px;margin-left:-300px;}
+      }
+      @media (max-width:450px){
+        .tab{font-size:18px;line-height:30px;}
+        .inputs, .btn{font-size:16px;}
+      }
+      @media (max-width:400px){
+        .tab{font-size:16px;line-height:20px;}
+        .inputs, .btn{font-size:14px;}
+      }
+      @media (max-width:350px){
+        .tab img.imgs{width:15.5%;}
+      }
+      @media (max-height:300px){
+        .main{height:300px;}
+        .bg{position:absolute;height:300px;}
+        .box{position:absolute;margin-top:-18.5%;}
+      }
+</style>
+<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+<script type="text/javascript" src="http://static.dface.cn/js/dface.js" ></script>
+<script type="text/javascript">
+function Close(){
+  document.getElementById("BG").style.display="none";
+  document.getElementById("Box1").style.display="none";
+  document.getElementById("Box2").style.display="none";
+  document.getElementById("Box3").style.display="none";
+}
+function Check(){
+  document.getElementById("BG").style.display="";
+  var val=document.getElementById("Inputs").value;
+  if(/[^\w]|_+/.test(val)||val.length!=7){
+    document.getElementById("Word").innerHTML="请输入正确的兑换码";
+    document.getElementById("Box2").style.display="";
+    return false;
+  }
+  requestdata.id = val;
+  $.ajax({
+    url: "http://dface.cn/coupon_code/create?Access-Control-Allow-Origin=1",
+    type: 'post', 
+    data: {id:val},
+	success: function(data){
+		switch(data.status){
+			case 1: 
+				document.getElementById("Box3").style.display=""; 
+				break;
+			case 2:
+			  document.getElementById("Word").innerHTML="请输入正确的兑换码";
+			  document.getElementById("Box2").style.display="";
+			  break;
+			case 3:
+			  document.getElementById("Box1").style.display="";
+			  break;
+			}
+		}
+ 		, error: function(data){}
+  });
+  
+}
+document.getElementById("Inputs").onclick=function(){
+  if(this.value=="输入兑换码"){
+    this.value="";
+  }
+}
+dface.showMode(dface.initMode.fullscreenNew);
+</script>
+</html>
