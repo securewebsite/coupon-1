@@ -38,7 +38,7 @@ body{ font-family:Arial,'Microsoft YaHei'; font-size:16px;}
 .topclip{width:90%; background:#f3f5f7; padding:20px 0; border:#dce0e2 1px solid; border-radius:10px; text-align:center; font-size:100%; margin:0 auto; position:relative; z-index:10;}
 .topclip a{ background:url(../images/123.png) no-repeat 0px; padding-left:60px; color:#555;}
 #wrapper {position:absolute; z-index:1; top:88px; bottom:0px; width:100%; overflow:auto; background:#ebf1f6;}
-.statusHide{animation: statusHide 1s forwards; -moz-animation: statusHide 1s forwards; -webkit-animation: statusHide 1s forwards; -o-animation: statusHide 1s forwards;}
+.statusHide{animation: statusHide 0.5s forwards; -moz-animation: statusHide 0.5s forwards; -webkit-animation: statusHide 0.5s forwards; -o-animation: statusHide 0.5s forwards;}
 @keyframes statusHide{
 	from{top:88px;}
 	to  {top:44px;}
@@ -55,7 +55,7 @@ body{ font-family:Arial,'Microsoft YaHei'; font-size:16px;}
 	from{top:88px;}
 	to  {top:44px;}
 	}
-.statusShow{animation: statusShow 1s forwards; -moz-animation: statusShow 1s forwards; -webkit-animation: statusShow 1s forwards; -o-animation: statusShow 1s forwards;}
+.statusShow{animation: statusShow 0.5s forwards; -moz-animation: statusShow 0.5s forwards; -webkit-animation: statusShow 0.5s forwards; -o-animation: statusShow 0.5s forwards;}
 @keyframes statusShow{
 	from{top:44px;}
 	to  {top:88px;}

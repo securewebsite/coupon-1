@@ -293,12 +293,14 @@ iScroll.prototype = {
 
 		if (this.options.useTransform) {
 			this.scroller.style[transform] = 'translate(' + x + 'px,' + y + 'px) scale(' + this.scale + ')' + translateZ;
-				if(y<-200){
-					$('#wrapper').addClass('statusHide');
-					$('#wrapper').removeClass('statusShow');
-				}else{
-					$('#wrapper').addClass('statusShow');
-					$('#wrapper').removeClass('statusHide');
+				if($('.mainList').height()>500){
+					if(y<-60){
+						$('.wrapIn').addClass('statusHide');
+						$('.wrapIn').removeClass('statusShow');
+					}else{
+						$('.wrapIn').addClass('statusShow');
+						$('.wrapIn').removeClass('statusHide');
+					}	
 				}
 		} else {
 			x = m.round(x);

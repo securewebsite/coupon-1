@@ -17,7 +17,10 @@ function status(couponUrl,couponData){
 		processData: true,
 		success:function(data){
 		    console.log(data);
+			
+			setTimeout(function(){$('#wrapper').addClass('wrapIn');},1000);
 		    
+			
 			params.status = couponData.status||0;
 			params.type = couponData.type||0;
 			params.page += 1;
