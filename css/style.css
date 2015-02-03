@@ -17,7 +17,9 @@ blockquote:before, blockquote:after, q:before, q:after {content: ''; content: no
 :focus {outline: 0;}
 body{ font-family:Arial,'Microsoft YaHei'; font-size:16px;}
 .clear{clear:both;}
-.wrap{max-width:680px; margin:0 auto;}
+.wrap{max-width:680px; margin:0 auto; position: relative;}
+#top{position:fixed; width:100%; z-index:10;}
+.height88{height:88px;}
 /****menu****/
 .menu{width:100%; padding:10px 0; background:#02a9ec; position:relative;}
 .menu a{position:absolute; color:#fff; left:0px; line-height:28px; left:5%; -webkit-tap-highlight-color:rgba(2,169,236,0);}
@@ -35,51 +37,15 @@ body{ font-family:Arial,'Microsoft YaHei'; font-size:16px;}
 .all_lx .jianjiao{height:18px; width:50%; display:block; text-align:center; position:relative; left:50%; top:2px;}
 /*****main*******/
 .mainList{background:#fff; padding:20px 0;}
-.topclip{width:90%; background:#f3f5f7; padding:20px 0; border:#dce0e2 1px solid; border-radius:10px; text-align:center; font-size:100%; margin:0 auto; position:relative; z-index:10;}
+.topclip{width:90%; background:#f3f5f7; padding:20px 0; border:#dce0e2 1px solid; border-radius:10px; text-align:center; font-size:100%; margin:0 auto; position:relative;}
 .topclip a{ background:url(../images/123.png) no-repeat 0px; padding-left:60px; color:#555;}
-#wrapper {position:absolute; z-index:1; top:88px; bottom:0px; width:100%; overflow:auto; background:#ebf1f6;}
-.statusHide{animation: statusHide 0.5s forwards; -moz-animation: statusHide 0.5s forwards; -webkit-animation: statusHide 0.5s forwards; -o-animation: statusHide 0.5s forwards;}
-@keyframes statusHide{
-	from{top:88px;}
-	to  {top:44px;}
-	}
-@-moz-keyframes statusHide{
-	from{top:88px;}
-	to  {top:44px;}
-	}
-@-webkit-keyframes statusHide{
-	from{top:88px;}
-	to  {top:44px;}
-	}
-@-o-keyframes statusHide{
-	from{top:88px;}
-	to  {top:44px;}
-	}
-.statusShow{animation: statusShow 0.5s forwards; -moz-animation: statusShow 0.5s forwards; -webkit-animation: statusShow 0.5s forwards; -o-animation: statusShow 0.5s forwards;}
-@keyframes statusShow{
-	from{top:44px;}
-	to  {top:88px;}
-	}
-@-moz-keyframes statusShow{
-	from{top:44px;}
-	to  {top:88px;}
-	}
-@-webkit-keyframes statusShow{
-	from{top:44px;}
-	to  {top:88px;}
-	}
-@-o-keyframes statusShow{
-	from{top:44px;}
-	to  {top:88px;}
-	}
-
-#scroller{ overflow:auto; min-height:100%;}
 /*******couponList Public*********/
 .couponList{position:relative; }
 .couponListCon{ background:#f3f5f7; border-left:#dce0e2 1px solid; border-top:#dce0e2 1px solid; border-right:#dce0e2 1px solid; border-top-left-radius:10px; border-top-right-radius:10px;}
 .couponListCon p{color:#b7bdc5; text-align:center; margin-top:5px; font-size:80%; overflow:hidden; height:20px;}
 .couponInfo h3{color:#02a9ec; text-align:center; font-weight:normal; overflow:hidden; height:24px; font-size:16px;}
 .couponInfo span{color:#555; display:block; text-align:center; border-bottom:#dce0e2 1px solid; padding-bottom:5px; margin-top:5px; font-size:12px;}
+.couponListImg{background:url(../images/grey.gif) no-repeat; background-size: 100%;}
 .couponListImg img{width:100%; float:left;}
 .news{position:absolute; top:0; left:0;}
 .status{position:absolute;left:0;top:0; width:100%; height:100%;color:#fff;z-index:5;text-align: center;}
@@ -120,38 +86,40 @@ body{ font-family:Arial,'Microsoft YaHei'; font-size:16px;}
 .pullDownLabel p{color:#bfbfbf; font-size:80%;}
 #pullUp{display:none;}
 #logo{height:50%; position:relative;}
+.loading{width: 100%; position: absolute; text-align: center; top: 40%;}
+.loading p{position:relative; top:50px; color:#999; font-size:12px;}
 .loadingLogo{position:relative; animation:logo 2s linear 0s infinite alternate;
 -moz-animation:logo 2s linear 0s infinite alternate;
 -webkit-animation:logo 2s linear 0s infinite alternate;
--o-animation:logo 2s linear 0s infinite alternate; position:relative;}
+-o-animation:logo 2s linear 0s infinite alternate; margin-top:50px;}
 @keyframes logo{
-	0%   {top:50%;}
-	25%  {top:25%;}
-	50%  {top:0%;}
-	75%  {top:25%;}
-	100% {top:50%;}
+	0%   {top:10px;}
+	25%  {top:30px;}
+	50%  {top:50px;}
+	75%  {top:30px;}
+	100% {top:10px;}
 	}
 @-moz-keyframes logo{
-	0%   {top:50%;}
-	25%  {top:25%;}
-	50%  {top:0%;}
-	75%  {top:25%;}
-	100% {top:50%;}
+	0%   {top:10px;}
+	25%  {top:30px;}
+	50%  {top:50px;}
+	75%  {top:30px;}
+	100% {top:10px;}
 	}
 @-webkit-keyframes logo{
-	0%   {top:50%;}
-	25%  {top:25%;}
-	50%  {top:0%;}
-	75%  {top:25%;}
-	100% {top:50%;}
+	0%   {top:10px;}
+	25%  {top:30px;}
+	50%  {top:50px;}
+	75%  {top:30px;}
+	100% {top:10px;}
 	}
 @-o-keyframes logo{
-	0%   {top:50%;}
-	25%  {top:25%;}
-	50%  {top:0%;}
-	75%  {top:25%;}
-	100% {top:50%;}
+	0%   {top:10px;}
+	25%  {top:30px;}
+	50%  {top:50px;}
+	75%  {top:30px;}
+	100% {top:10px;}
 	}
 	
 .falling{position:absolute; top:0px; left:0;}
-
+.loadMore{font-size:12px; color:#999; line-height:38px; text-align:center;}

@@ -20,95 +20,102 @@
       </table>
       <button type="button" class="btn2" onclick="Black()">返回</button>
     </div>
-    <div class="box2" id="Box3" style="display:none;">
-    </div>
+    <div class="box2" id="Box3" style="display:none;"> </div>
   </form>
 </div>
 <div class="main">
-  <div class="con">
-  </div>
+  <div class="con"> </div>
 </div>
+<div class="loading"><div class="loadingLogo"><img src="images/logo.png" id="logo"/></div><p>优惠正在加载，客观切莫急躁。</p></div>
+<script id="detail" type="text/x-handlebars-template">
+	<div class="picbox" id="PicBox">
+	  <h3>{{name}}<a class="fa fa-chevron-left" href="javascript:window.history.go(-1);"></a></h3>
+	  {{#compare status 2}}
+		<span class="used">已使用</span> 
+	    <div class="bg2" id="BG2"></div>
+	  {{/compare}}
+	  {{#compare status 3}}
+		<span class="used">已失效</span> 
+	    <div class="bg2" id="BG2"></div>
+	  {{/compare}}
+	  <img src="{{img}}" id="Pic"/>
+	  <div class="bg2" style='display:none;'></div>
+	  <div class="pictitle">
+		<div class="picdiv">
+			使用期限： <span>{{expire}}</span> 
+		</div>
+		<div class="picdiv2">
+			编号： <span>{{number}}</span> 
+		</div>
+		<span class="clear"></span> 
+	  </div>
+	</div>
+	<div class="coninner">
+	  <div class="boxTop"> 
+	    {{#compare status 1}}
+	    <a class="btn" onclick="Open()" id="Btn2"><img src="images/sign6.png" align="bottom" />使用</a> 
+		<span class="word">温馨提示：不要自己点击使用按钮，入店后请服务人员操作哦</span>
+		{{/compare}}
+		<h2 class="title"><img src="images/sign7.png" class="imgs">券详情</h2>
+		<div class="box"> {{detail}} </div>
+		<h2 class="title"><img src="images/sign8.png" class="imgs2">商家信息</h2>
+	  </div>
+	  {{#each shops}}
+	  <div class="box mb5">
+		<div class="box2title">
+		  <h2>{{name}}</h2>
+		  <span>{{distance}}m</span> 
+		</div>
+		{{#if address}}
+		<p style="border-bottom:#ccc 1px solid;">
+			<i class="fa fa-map-marker"></i>地址：{{address}}
+		</p>
+		{{/if}}
+		{{#if tel}}
+		<p>
+			<i class="fa fa-phone"></i>
+			电话：<a href="tel:{{tel}}">{{tel}}</a>
+		</p>
+		{{/if}}
+		<span class="clear"></span> 
+	  </div>
+	  {{/each}}
+	</div>
+</script>
+<script id="useBox" type="text/x-handlebars-template">
+	<table class="tab" cellspacing="0" cellpadding="0">
+		<tr>
+			<td align="center" valign="middle"><a onclick="Close()"><img src="images/sign10.png" class="imgs2"/></a>{{name}}<span>该券使用后不能再次使用哦</span>
+			{{#if password}}
+				<input type="text" id="Inputs" class="inputs" placeholder="输入兑换码" />
+			{{/if}}
+			</td>
+		</tr>
+	</table>
+	<button type="button" class="btn2" onclick="Check()">使用</button>
+</script>
 </body>
 <script type="text/javascript" src="http://static.dface.cn/js/jquery-2.1.1.js"></script>
 <script type="text/javascript" src="http://static.dface.cn/js/dface.js" ></script>
+<script type="text/javascript" src="http://static.dface.cn/js/handlebars.js"></script>
+<script type="text/javascript" src="js/getDetailData.js"></script>
+<script type="text/javascript" src="js/action/detailClickAction.js"></script>
 <script type="text/javascript">
 var password ;
+$(document).ready(function(){
+    getDetailData();
+	//detail();
+    //shops();
+});
+
+/*var password ;
 $(document).ready(function(){
     detail();
 	//detail();
     shops();
-    
-    
 });
-</script>
-<script type="text/javascript" src="js/detail.js"></script>
-<script type="text/javascript">
-function Close(){//关闭
-	$('#BG').hide();
-	$('.box2').hide();
-}
-function Check(){ //兑换码验证提交按钮
-	var val=document.getElementById("Inputs").value;
-	if(password && val!=password){
-		$('#Box2').show();
-		$('#Box3').hide();
-		$('#Word').empty().append('确认码输入错误，请重新输入');
-		return false;
-	}
-	$.ajax({
-		async : false,
-		url: 'http://dface.cn/wapp/coupon_downs/use?Access-Control-Allow-Origin=1',
-		//url: "assets/use.json",
-		data: {id: getUrlParam('id')},
-		type:'get',
-		xhrFields: {
-            withCredentials: true
-        },
-		success: function(data){
-			if(data.succ){
-				document.getElementById("Pic").src=grayscale(document.getElementById("Pic").src);
-				$('#BG').hide();
-				$('#Btn2').hide();
-				$('.word').hide();
-				$('.picbox').append('<span class="used">已使用</span>');
-			}else{
-				if(data.error==1){
-					$('#Box2').show();
-					$('#Box3').hide();
-					$('#Word').empty().append('已使用/已失效');
-				}else{
-					$('#Box2').show();
-					$('#Box3').hide();
-					$('#Word').empty().append('使用失败');
-				}
-			}
-		},
-		error: function(data){
-			$('#Box2').show();
-			$('#Box3').hide();
-			$('#Word').empty().append('网络连接错误，请重试');
-		}
-	})
-}
 
-function Open(){//使用按钮
-  document.getElementById("BG").style.display="block";
-  var documentHeight=document.body.scrollHeight;
-  var windowHeight=document.documentElement.clientHeight;
-  if(documentHeight>windowHeight){
-    document.getElementById("BG").style.height=documentHeight+"px";
-  }else{
-    document.getElementById("BG").style.height=windowHeight+"px";
-  }
-
-  document.getElementById("Box3").style.display="block";
-}
-function Black(){//返回按钮
-  document.getElementById("Box2").style.display="none";
-  document.getElementById("Box3").style.display="block";
-  document.getElementById("Inputs").value="";
-}
-
+*/
 
 </script>
 </html>

@@ -45,7 +45,7 @@ img {
 	top: 0px;
 	z-index: 1;
 	background-color: rgba(0,0,0,0.6);
-	display: none;
+	/*display: none;*/
 }
 .mb5 {
 	margin-bottom: 5%;
@@ -408,3 +408,38 @@ img {
 }
 }
 .back{color:#02a9ec;float:right;font-size:14px;margin-bottom:5%;clear:both;}
+#logo{height:50%; position:relative;}
+.loading{width: 100%; position: absolute; text-align: center; top: 20%;}
+.loading p{position:relative; top:50px; color:#999; font-size:12px;}
+.loadingLogo{position:relative; animation:logo 2s linear 0s infinite alternate;
+-moz-animation:logo 2s linear 0s infinite alternate;
+-webkit-animation:logo 2s linear 0s infinite alternate;
+-o-animation:logo 2s linear 0s infinite alternate; margin-top:50px;}
+@keyframes logo{
+	0%   {top:10px;}
+	25%  {top:30px;}
+	50%  {top:50px;}
+	75%  {top:30px;}
+	100% {top:10px;}
+	}
+@-moz-keyframes logo{
+	0%   {top:10px;}
+	25%  {top:30px;}
+	50%  {top:50px;}
+	75%  {top:30px;}
+	100% {top:10px;}
+	}
+@-webkit-keyframes logo{
+	0%   {top:10px;}
+	25%  {top:30px;}
+	50%  {top:50px;}
+	75%  {top:30px;}
+	100% {top:10px;}
+	}
+@-o-keyframes logo{
+	0%   {top:10px;}
+	25%  {top:30px;}
+	50%  {top:50px;}
+	75%  {top:30px;}
+	100% {top:10px;}
+	}

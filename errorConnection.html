@@ -33,6 +33,18 @@ body{ font-family:Arial,'Microsoft YaHei'; font-size:16px;}
 .reload{width:33%; background:#02a9ed; border-radius:3px; display:block; margin:50px auto; color:#fff; font-size:18px; text-align:center; padding:15px 10px;}
 </style>
 <link href="font-awesome/css/font-awesome.css" type="text/css" rel="stylesheet">
+<script>
+var getQueryString=function (name) {
+	var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+	var r = window.location.search.substr(1).match(reg);
+	if (r != null) return unescape(r[2]);
+	return null;
+}
+function reloadUrl(){
+	var url=getQueryString("url");
+	window.location.href = url;
+}
+</script>
 </head>
 
 <body>
@@ -44,7 +56,7 @@ body{ font-family:Arial,'Microsoft YaHei'; font-size:16px;}
 <div class="noclip nowifi">
 	<img src="images/no.jpg" class="nopic" width="33%" /><img src="images/nowifi.jpg" class="nolist" width="10%">
 	<p class="notxt">请开启网络后<br/>点击“重新加载”按钮</p>
-	<a href="index.html" class="reload">重新加载</a>
+	<a href="javascript:;" onclick="reloadUrl()" class="reload">重新加载</a>
 </div>
 </body>
 </html>

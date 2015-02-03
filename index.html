@@ -39,27 +39,97 @@
     	<div class="clear"></div>
     </div>
 </div>
-<div class="noclip nocoupon"></div>
-<div id="wrapper">
-   <div id="scroller">
-    	<div id="pullDown">
-			<div class="pullDownLabel"></div>
-		</div>
-        <div class="mainList">
-            <div class="wrap">
-                <div class="topclip"> <a href="http://coupon.dface.cn/coupon_code.html?from=dface">使用兑换码？猛戳这里</a> </div>
-                <div class="useMoney"></div>
-                <div class="freeReceive" id="freeReceive"></div>
-                <div class="clear"></div>
-            </div>
- 		</div>
-        
-        <div id="pullUp">
-			<span class="pullUpIcon"></span><span class="pullUpLabel">上拉加载更多...</span>
-		</div>
-        
-	</div>
+<div class="height88"></div>
+<div class="mainList">
+    <div class="wrap">
+        <div class="topclip"> <a href="http://coupon.dface.cn/coupon_code.html?from=dface">使用兑换码？猛戳这里</a> </div>
+		<div class="useMoney"></div>
+        <div class="freeReceive"></div>
+        <div class="clear"></div>
+    </div>
 </div>
+<div class="loadMore"></div>
+<div class="loading"><div class="loadingLogo"><img src="images/logo.png" id="logo"/></div><p>优惠正在加载，客观切莫急躁。</p></div>
+<div class="noclip nocoupon"></div>
+<script id="useMoney" type="text/x-handlebars-template">
+	{{#each this}}
+		{{#compare type 1}}
+			<div class="ticketList1 couponList">
+				<div class="couponListCon">
+					<div class="couponListImg">
+						<a href="coupon-detail.html?id={{id}}">
+							<img src="{{img}}" style="display: inline;">
+							{{#compare status 1}}
+								<div class="status"></div>
+							{{/compare}}
+							{{#compare status 2}}
+								<div class="used status"><span>已使用</span></div>
+								<div class="bg2"></div>
+							{{/compare}}
+							{{#compare status 3}}
+								<div class="used status"><span>已失效</span></div>
+								<div class="bg2"></div>
+							{{/compare}}
+						</a>
+					</div>
+					<div class="couponInfo">
+						<a href="coupon-detail.html?id={{id}}">
+							<h3>{{name}}</h3>
+							<span>使用期限<br>{{expire}}</span>
+							<p>{{from}}</p>
+						</a>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="bot"></div>
+				<div class="news"><img src="images/new.png"></div>
+			</div>
+		{{/compare}}
+	{{/each}}
+</script>
+<script id="freeReceive" type="text/x-handlebars-template">
+	{{#each this}}
+		{{#compare type 2}}
+			<div class="ticketList2 couponList">
+				<div class="couponListCon">
+					<div class="couponListImg">
+						<a href="coupon-detail.html?id={{id}}">
+							<img src="{{img}}" style="display: inline;">
+							{{#compare status 1}}
+								<div class="status"></div>
+							{{/compare}}
+							{{#compare status 2}}
+								<div class="used status"><span>已使用</span></div>
+								<div class="bg2"></div>
+							{{/compare}}
+							{{#compare status 3}}
+								<div class="used status"><span>已失效</span></div>
+								<div class="bg2"></div>
+							{{/compare}}
+						</a>
+					</div>
+					<div class="couponInfo">
+						<a href="coupon-detail.html?id={{id}}">
+							<h3>{{name}}</h3>
+							<span>使用期限<br>{{expire}}</span>
+							<p>{{from}}</p>
+						</a>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="bot"></div>
+				{{#compare news 1}}
+					<div class="news"><img src="images/new.png"></div>
+				{{/compare}}
+			</div>
+		{{/compare}}
+	{{/each}}	
+</script>
+<script id="noCoupon" type="text/x-handlebars-template">
+	<img src="images/no.jpg" class="nopic" width="33%" />
+	<img src="images/nolist.jpg" class="nolist" width="10%">
+	<p class="notxt">这里空荡荡</p>
+</script>
 <script type="text/javascript">
 var statusValue;
 var typeValue;
@@ -70,18 +140,19 @@ var last_page = true;
 </script>
 <script type="text/javascript" src="http://static.dface.cn/js/jquery-2.1.1.js"></script>
 <script type="text/javascript" src="http://static.dface.cn/js/dface.js" ></script>
-<script type="text/javascript" src="js/iscroll.js"></script>
-<script type="text/javascript" src="js/myScroll.js"></script>
-<script type="text/javascript" src="http://static.dface.cn/js/jquery.lazyload.js"></script>
-<script type="text/javascript" src="js/coupon.js" ></script>
-<script type="text/javascript">
-    startupResult = function (result) {
+<script type="text/javascript" src="http://static.dface.cn/js/handlebars.js"></script>
+<script type="text/javascript" src="js/getCouponData.js" ></script>
+<script type="text/javascript" src="js/action/getScrollAction.js" ></script>
+<script type="text/javascript" src="js/action/indexClickAction.js" ></script>
+<script>
+	startupResult = function (result) {
         switch (result) {
             case dface.startupResult.ok:
-                getcoupon();
-                tab();
-                pipEffects();
-				pullDownAction();
+                getCouponData('http://dface.cn/wapp/coupon_downs?Access-Control-Allow-Origin=1',{status:"1"});
+                //getCouponData('assets/coupon1.json',{status:"1"});
+				statusValue = 1;
+				indexAction.tab();
+				onscroll();
                 //dface.getFriends(myGetFriends);
                 break;
             case dface.startupResult.no_session:
@@ -95,9 +166,8 @@ var last_page = true;
                 break;
         }
     };
-
     dface.showMode(dface.initMode.fullscreenNew);
-    dface.cors(startupResult);
+    dface.cors(startupResult);	
 </script>
 </body>
 </html>
