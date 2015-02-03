@@ -146,14 +146,12 @@ var last_page = true;
 <script type="text/javascript" src="js/action/indexClickAction.js" ></script>
 <script>
 	indexAction.tab();	
-	startupResult = function (result) {
+	var startupResult = function (result) {
         switch (result) {
             case dface.startupResult.ok:
                 getCouponData('http://dface.cn/wapp/coupon_downs?Access-Control-Allow-Origin=1',{status:"1"});
-                //getCouponData('assets/coupon1.json',{status:"1"});
 				statusValue = 1;
 				onscroll();
-                //dface.getFriends(myGetFriends);
                 break;
             case dface.startupResult.no_session:
                 alert("获取不到session");
