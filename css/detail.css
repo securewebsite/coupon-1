@@ -3,6 +3,8 @@
 	margin: 0px;
 	outline: none;
 	font-family: "微软雅黑";
+	-webkit-user-select: none;
+	-moz-user-select: none;
 }
 a {
 	text-decoration: none;
