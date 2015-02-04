@@ -1,10 +1,10 @@
-function getDetailData(loc){
+var getDetailData =function (loc){
 	var id = getUrlParam('id');
 	$.ajax({
 		type:'get',
 		url:'http://dface.cn/wapp/coupon_downs/show?id='+ id + '&Access-Control-Allow-Origin=1',
 		//url:'assets/detail.json',
-		data: {loc: loc},
+		data: {"loc": loc},
 		success: function(data){
 			$('.loading').hide();
 			var detailTemplate = Handlebars.compile($("#detail").html());
@@ -19,7 +19,9 @@ function getDetailData(loc){
 			$('.con').append(detailTemplate(data));
 			$('#Box3').append(useBoxTemplate(data));
 		},
-		error: function(){alert('错误');}
+		error: function(){
+			window.location.replace("errorConnection.html?url="+encodeURIComponent(window.location.href));
+		}
 	});
 }
 var getUrlParam = function (name) {
