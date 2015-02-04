@@ -55,9 +55,9 @@
 	{{#each this}}
 		{{#compare type 1}}
 			<div class="ticketList1 couponList">
-				<div class="couponListCon">
-					<div class="couponListImg">
-						<a href="coupon-detail.html?id={{id}}">
+				<a href="coupon-detail.html?id={{id}}">
+					<div class="couponListCon">
+						<div class="couponListImg">
 							<img src="{{img}}" style="display: inline;">
 							{{#compare status 1}}
 								<div class="status"></div>
@@ -70,17 +70,15 @@
 								<div class="used status"><span>已失效</span></div>
 								<div class="bg2"></div>
 							{{/compare}}
-						</a>
-					</div>
-					<div class="couponInfo">
-						<a href="coupon-detail.html?id={{id}}">
+						</div>
+						<div class="couponInfo">
 							<h3>{{name}}</h3>
 							<span>使用期限<br>{{expire}}</span>
 							<p>{{from}}</p>
-						</a>
+						</div>
+						<div class="clear"></div>
 					</div>
-					<div class="clear"></div>
-				</div>
+				</a>
 				<div class="bot"></div>
 				{{#compare news 1}}
 				<div class="news"><img src="images/new.png"></div>
@@ -93,9 +91,9 @@
 	{{#each this}}
 		{{#compare type 2}}
 			<div class="ticketList2 couponList">
-				<div class="couponListCon">
-					<div class="couponListImg">
-						<a href="coupon-detail.html?id={{id}}">
+				<a href="coupon-detail.html?id={{id}}">
+					<div class="couponListCon">
+						<div class="couponListImg">
 							<img src="{{img}}" style="display: inline;">
 							{{#compare status 1}}
 								<div class="status"></div>
@@ -108,17 +106,15 @@
 								<div class="used status"><span>已失效</span></div>
 								<div class="bg2"></div>
 							{{/compare}}
-						</a>
-					</div>
-					<div class="couponInfo">
-						<a href="coupon-detail.html?id={{id}}">
+						</div>
+						<div class="couponInfo">
 							<h3>{{name}}</h3>
 							<span>使用期限<br>{{expire}}</span>
 							<p>{{from}}</p>
-						</a>
+						</div>
+						<div class="clear"></div>
 					</div>
-					<div class="clear"></div>
-				</div>
+				</a>
 				<div class="bot"></div>
 				{{#compare news 1}}
 					<div class="news"><img src="images/new.png"></div>

@@ -18,6 +18,7 @@ function getCouponData(couponUrl,couponData){
 			if(data.length == 0){
 				var noCouponTemplate = Handlebars.compile($("#noCoupon").html());
 				$('.nocoupon').append(noCouponTemplate(data));
+				$('.loadMore').hide();
 			}else{
 				var useMoneyTemplate = Handlebars.compile($("#useMoney").html());
 				var freeReceiveTemplate = Handlebars.compile($("#freeReceive").html());

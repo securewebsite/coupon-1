@@ -6,6 +6,7 @@ var getDetailData =function (loc){
 		//url:'assets/detail.json',
 		data: {"loc": loc},
 		success: function(data){
+			password = data.password;
 			$('.loading').hide();
 			var detailTemplate = Handlebars.compile($("#detail").html());
 			var useBoxTemplate = Handlebars.compile($("#useBox").html());
