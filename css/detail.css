@@ -410,7 +410,7 @@ img {
 }
 }
 .back{color:#02a9ec;float:right;font-size:14px;margin-bottom:5%;clear:both;}
-#logo{height:50%; position:relative;}
+#logo{position:relative;}
 .loading{width: 100%; position: absolute; text-align: center; top: 20%;}
 .loading p{position:relative; top:50px; color:#999; font-size:12px;}
 .loadingLogo{position:relative; animation:logo 2s linear 0s infinite alternate;

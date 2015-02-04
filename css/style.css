@@ -89,7 +89,7 @@ body{ font-family:Arial,'Microsoft YaHei'; font-size:16px;}
 }
 .pullDownLabel p{color:#bfbfbf; font-size:80%;}
 #pullUp{display:none;}
-#logo{height:50%; position:relative;}
+#logo{position:relative;}
 .loading{width: 100%; position: absolute; text-align: center; top: 40%;}
 .loading p{position:relative; top:50px; color:#999; font-size:12px;}
 .loadingLogo{position:relative; animation:logo 2s linear 0s infinite alternate;

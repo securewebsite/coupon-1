@@ -3,8 +3,9 @@ function Close(){//关闭
 	$('.box2').hide();
 }
 function Check(){ //兑换码验证提交按钮
+
 	var val=$('#Inputs').val();
-	if(password && val!=password){
+	if(password || val!=password){
 		$('#Box2').show();
 		$('#Box3').hide();
 		$('#Word').empty().append('确认码输入错误，请重新输入');
