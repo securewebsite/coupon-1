@@ -17,6 +17,7 @@ function getCouponData(couponUrl,couponData){
 			$('.loading').hide();
 			if(data.length == 0){
 				var noCouponTemplate = Handlebars.compile($("#noCoupon").html());
+				$('.nocoupon').empty();
 				$('.nocoupon').append(noCouponTemplate(data));
 				$('.loadMore').hide();
 			}else{
