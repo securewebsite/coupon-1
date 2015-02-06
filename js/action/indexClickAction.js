@@ -25,43 +25,43 @@ var indexAction = {
 }
 //未使用
 $("#unUsed").click(function(){
-	getCouponData('http://dface.cn/wapp/coupon_downs?Access-Control-Allow-Origin=1',{status:"1"});
+	getCouponData('http://dface.cn/wapp/coupon_downs?Access-Control-Allow-Origin=1',{status:"1",type:typeValue});
 	//getCouponData('assets/coupon1.json',{status:"1"});
 	statusValue = 1;
 });
 
 //已使用
 $("#aUsed").click(function(){
-	getCouponData('http://dface.cn/wapp/coupon_downs?Access-Control-Allow-Origin=1',{status:"2"});
+	getCouponData('http://dface.cn/wapp/coupon_downs?Access-Control-Allow-Origin=1',{status:"2",type:typeValue});
 	//getCouponData('assets/coupon2.json',{status:"1"});
 	statusValue = 2;
 });
 
 //失效
 $("#invalid").click(function(){
-	getCouponData('http://dface.cn/wapp/coupon_downs?Access-Control-Allow-Origin=1',{status:"3"});
+	getCouponData('http://dface.cn/wapp/coupon_downs?Access-Control-Allow-Origin=1',{status:"3",type:typeValue});
 	statusValue = 3;
 });
 
 //所有状态
 $("#allzt").click(function(){
-	getCouponData('http://dface.cn/wapp/coupon_downs?Access-Control-Allow-Origin=1',{status:"0"});
+	getCouponData('http://dface.cn/wapp/coupon_downs?Access-Control-Allow-Origin=1',{status:"0",type:typeValue});
 	statusValue = 0;
 });
 //所有类型
 $("#alllx").click(function(){
-	getCouponData('http://dface.cn/wapp/coupon_downs?Access-Control-Allow-Origin=1',{type:"0"});
+	getCouponData('http://dface.cn/wapp/coupon_downs?Access-Control-Allow-Origin=1',{type:"0",status:statusValue});
 	typeValue = 0;
 });
 
 //花钱购
 $("#myCoupon").click(function(){
-	getCouponData('http://dface.cn/wapp/coupon_downs?Access-Control-Allow-Origin=1',{type:"1"});
+	getCouponData('http://dface.cn/wapp/coupon_downs?Access-Control-Allow-Origin=1',{type:"1",status:statusValue});
 	typeValue = 1;
 });
 
 //免费领
 $("#freeCoupon").click(function(){
-	getCouponData('http://dface.cn/wapp/coupon_downs?Access-Control-Allow-Origin=1',{type:"2"});
+	getCouponData('http://dface.cn/wapp/coupon_downs?Access-Control-Allow-Origin=1',{type:"2",status:statusValue});
 	typeValue = 2;
 });

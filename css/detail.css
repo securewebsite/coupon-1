@@ -31,7 +31,7 @@ img {
 .textleft {
 	text-align: left;
 }
-.picbox h3{position:fixed; width:100%; text-align:center; padding:10px 0; color:#fff; font-weight:normal; background: rgba(0,0,0,0.4); z-index:10;}
+.picbox h3{position:fixed; width:100%; text-align:center; padding:10px 0; color:#fff; font-weight:normal; background: rgba(0,0,0,0.4); z-index:10; top:0;}
 .picbox h3 a{color:#fff; position:absolute; left:0px; line-height:28px; left:5%;}
 .bg {
 	position: absolute;
@@ -393,7 +393,7 @@ img {
 	margin-top: 2px;
 }
 .tab img.imgs2 {
-	width: 4.5%;
+	width: 20px;
 }
 .picbox.beused .used, .picbox.belose .lose {
 	font-size: 16px;

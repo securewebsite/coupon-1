@@ -86,9 +86,14 @@
 	<table class="tab" cellspacing="0" cellpadding="0">
 		<tr>
 			<td align="center" valign="middle"><a onclick="Close()"><img src="images/sign10.png" class="imgs2"/></a>{{name}}<span>该券使用后不能再次使用哦</span>
-			{{#if password}}
-				<input type="text" id="Inputs" class="inputs" placeholder="输入兑换码" />
-			{{/if}}
+			{{#compare type 1}}
+				<input type="text" id="Inputs" class="inputs" />
+			{{/compare}}
+			{{#compare type 2}}
+				{{#if password}}
+					<input type="text" id="Inputs" class="inputs" />
+				{{/if}}
+			{{/compare}}
 			</td>
 		</tr>
 	</table>
@@ -104,18 +109,6 @@
 var password;
 $(document).ready(function(){
     getDetailData();
-	//detail();
-    //shops();
 });
-
-/*var password ;
-$(document).ready(function(){
-    detail();
-	//detail();
-    shops();
-});
-
-*/
-
 </script>
 </html>
