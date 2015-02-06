@@ -49,7 +49,7 @@ function Check(){ //兑换码验证提交按钮
 }
 
 function Open(){//使用按钮
-  document.getElementById("BG").style.display="block";
+	$('#BG').show();
   var documentHeight=document.body.scrollHeight;
   var windowHeight=document.documentElement.clientHeight;
   if(documentHeight>windowHeight){
@@ -61,7 +61,7 @@ function Open(){//使用按钮
   document.getElementById("Box3").style.display="block";
 }
 function Black(){//返回按钮
-  document.getElementById("Box2").style.display="none";
-  document.getElementById("Box3").style.display="block";
-  document.getElementById("Inputs").value="";
+	$('#Box2').hide();
+	$('#Box3').show();
+	$('#Inputs').val('');
 }
