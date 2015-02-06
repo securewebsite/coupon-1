@@ -20,8 +20,21 @@ var getDetailData =function (loc){
 			$('.con').append(detailTemplate(data));
 			$('#Box3').append(useBoxTemplate(data));
 		},
-		error: function(){
-			window.location.replace("errorConnection.html?url="+encodeURIComponent(window.location.href));
+		error: function(XMLHttpRequest, textStatus, errorThrown){
+			$('.loading').hide();
+			if(XMLHttpRequest.status == 400){
+				window.location.replace("error/400.html?url="+encodeURIComponent(window.location.href));
+				return;
+			}else if(XMLHttpRequest.status == 401){
+				window.location.replace("error/401.html?url="+encodeURIComponent(window.location.href));
+				return;
+			}else if(XMLHttpRequest.status == 500){
+				window.location.replace("error/500.html?url="+encodeURIComponent(window.location.href));
+				return;
+			}else{
+				window.location.replace("errorConnection.html?url="+encodeURIComponent(window.location.href));
+				return;
+			}
 		}
 	});
 }

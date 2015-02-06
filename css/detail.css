@@ -252,6 +252,7 @@ img {
 	margin-left: -40%;
 	background-color: #fff;
 	border-radius: 5px;
+	z-index:50;
 }
 .tab {
 	width: 100%;
