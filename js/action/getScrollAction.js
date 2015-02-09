@@ -27,6 +27,7 @@ function onscroll(){
 		$(".all_zt,.all_lx").hide();
 		if (getScrollTop() + getClientHeight() == getScrollHeight()) { 
 			if(!last_page){
+				$('.loadMore').html('下拉加载更多优惠券...');
 				getCouponData('http://dface.cn/wapp/coupon_downs?Access-Control-Allow-Origin=1', params);
 			}else{
 				$('.loadMore').html('没有更多优惠券');
