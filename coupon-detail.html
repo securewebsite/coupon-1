@@ -14,7 +14,7 @@
     <div class="box2" id="Box2" style="display:none;">
       <table class="tab" cellspacing="0" cellpadding="0">
         <tr>
-          <td align="center" valign="middle"><a onclick="Close()"><img src="images/sign10.png" class="imgs2"/></a> <img src="images/sign2.png" class="imgs"/><br/>
+          <td align="center" valign="middle"><a onclick="Close()" class="closeBox"><img src="images/sign10.png" class="imgs2"/></a> <img src="images/sign2.png" class="imgs"/><br/>
             <span id="Word"></span></td>
         </tr>
       </table>
@@ -85,7 +85,7 @@
 <script id="useBox" type="text/x-handlebars-template">
 	<table class="tab" cellspacing="0" cellpadding="0">
 		<tr>
-			<td align="center" valign="middle"><a onclick="Close()"><img src="images/sign10.png" class="imgs2"/></a>{{name}}<span>该券使用后不能再次使用哦</span>
+			<td align="center" valign="middle"><a onclick="Close()" class="closeBox"><img src="images/sign10.png" class="imgs2"/></a>{{name}}<span>该券使用后不能再次使用哦</span>
 			{{#compare type 1}}
 				<input type="text" id="Inputs" class="inputs" />
 			{{/compare}}

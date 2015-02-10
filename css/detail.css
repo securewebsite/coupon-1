@@ -157,17 +157,18 @@ img {
 	width: 94%;
 	margin: 5% auto 0% auto;
 	color: #adafb1;
-	padding: 3%;
-	border: 1px solid #adafb1;
+	padding: 8px 3%;
+	border: 1px solid #ddd;
 	border-radius: 5px;
 	display: block;
 	font-size: 20px;
+	-webkit-appearance:none;
 }
 .btn {
 	width: 100%;
 	margin: 3% auto 4% auto;
 	color: #fff;
-	padding: 3% 0%;
+	padding: 12px 0%;
 	border: 1px solid #02a9ec;
 	background-color: #02a9ec;
 	border-radius: 5px;
@@ -190,7 +191,7 @@ img {
 	width: 100%;
 	margin: 3% auto 0% auto;
 	color: #fff;
-	padding: 9px 0%;
+	padding: 12px 0%;
 	border: 1px solid #02a9ec;
 	background-color: #02a9ec;
 	border-radius: 0px 0px 5px 5px;
@@ -395,8 +396,18 @@ img {
 .tab td span {
 	margin-top: 2px;
 }
+.closeBox{
+	display: block;
+	width: 50px;
+	height: 30px;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
 .tab img.imgs2 {
-	width: 20px;
+	width: 15px;
+	padding: 10px;
 }
 .picbox.beused .used, .picbox.belose .lose {
 	font-size: 16px;
