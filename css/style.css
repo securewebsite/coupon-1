@@ -41,8 +41,9 @@ body{ font-family:Arial,'Microsoft YaHei'; font-size:16px;}
 .all_lx .jianjiao{height:18px; width:50%; display:block; text-align:center; position:relative; left:50%; top:2px;}
 /*****main*******/
 .mainList{background:#fff; padding:20px 0;}
-.topclip{width:90%; background:#f3f5f7; padding:20px 0; border:#dce0e2 1px solid; border-radius:10px; text-align:center; font-size:100%; margin:0 auto; position:relative;}
-.topclip a{ background:url(../images/123.png) no-repeat 0px; padding-left:60px; color:#555;}
+.topclip{width:90%; background:#f3f5f7; padding-top:15px; padding-bottom:10px; border:#dce0e2 1px solid; border-radius:5px; text-align:center; font-size:0; margin:0 auto; position:relative;}
+.topclip a{ color:#555;}
+.topclip a span{font-size:16px; position:relative; top:-4px; left:5px;}
 /*******couponList Public*********/
 .couponList{position:relative; }
 .couponListCon{ background:#f3f5f7; border-left:#dce0e2 1px solid; border-top:#dce0e2 1px solid; border-right:#dce0e2 1px solid; border-top-left-radius:10px; border-top-right-radius:10px;}
