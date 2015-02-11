@@ -57,7 +57,7 @@
 		<span class="word">温馨提示：不要自己点击使用按钮，入店后请服务人员操作哦</span>
 		{{/compare}}
 		<h2 class="title"><img src="images/sign7.png" class="imgs">券详情</h2>
-		<div class="box"> {{detail}} </div>
+		<div class="box"> {{detail}}<br/>{{desc}} </div>
 		<h2 class="title"><img src="images/sign8.png" class="imgs2">商家信息</h2>
 	  </div>
 	  {{#each shops}}
@@ -67,13 +67,12 @@
 		  <span>{{distance}}m</span> 
 		</div>
 		{{#if address}}
-		<p style="border-bottom:#ccc 1px solid;">
-			<i class="fa fa-map-marker"></i>地址：{{address}}
+		<p>
+			地址：{{address}}
 		</p>
 		{{/if}}
 		{{#if tel}}
-		<p>
-			<i class="fa fa-phone"></i>
+		<p style=" font-weight: bold;">
 			电话：<a href="tel:{{tel}}">{{tel}}</a>
 		</p>
 		{{/if}}
