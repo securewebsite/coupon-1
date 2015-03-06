@@ -107,11 +107,11 @@
 <script type="text/javascript">
 var password;
 $(document).ready(function(){
-  //document.addEventListener('DfaceJSBridgeReady', function() {
-   //DfaceJSBridge.callHandler('getLoc', null, function(response) {
-        getDetailData();
-    //})
- //}, false);
+  document.addEventListener('DfaceJSBridgeReady', function() {
+   DfaceJSBridge.callHandler('getLoc', null, function(response) {
+        getDetailData(response);
+    })
+ }, false);
 });
 </script>
 </html>
