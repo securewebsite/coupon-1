@@ -32,7 +32,6 @@ body{ font-family:Arial,'Microsoft YaHei'; font-size:16px;}
 .notxt{font-size:16px; color:#97aab8; text-align:center;font-size: 16px; margin-top:50px; }
 .reload{width:33%; background:#02a9ed; border-radius:3px; display:block; margin:50px auto; color:#fff; font-size:18px; text-align:center; padding:15px 10px;}
 </style>
-<link href="font-awesome/css/font-awesome.css" type="text/css" rel="stylesheet">
 <script>
 var getQueryString=function (name) {
 	var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
@@ -48,13 +47,8 @@ function reloadUrl(){
 </head>
 
 <body>
-<div id="top">
-	<div class="menu">
-    	<h3>我的券<a class="fa fa-chevron-left" href="dface://close"></a></h3>
-	</div>
-</div>
 <div class="noclip nowifi">
-	<img src="images/no.jpg" class="nopic" width="33%" /><img src="images/nowifi.jpg" class="nolist" width="10%">
+	<img src="images/no.jpg" class="nopic" width="33%" />
 	<p class="notxt">服务器泡妞去了。。。</p>
 	<a href="javascript:;" onclick="reloadUrl()" class="reload">重新加载</a>
 </div>
