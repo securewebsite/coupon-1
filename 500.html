@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>网络连接错误</title>
+<style type="text/css">
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, button, textarea, p, blockquote, th, td {
+	margin: 0;padding: 0;
+}
+fieldset, img {border: 0;}
+abbr, acronym {border: 0;font-variant: normal;}
+body {line-height: 1.5;}
+ol, ul {list-style: none;}
+table {border-collapse: collapse; border-spacing: 0;}
+caption, th {text-align: left;}
+sup, sub {font-size: 100%; vertical-align: baseline;}
+blockquote, q {quotes: none;}
+blockquote:before, blockquote:after, q:before, q:after {content: ''; content: none;}
+:link, :visited {text-decoration: none;}
+:focus {outline: 0;}
+body{ font-family:Arial,'Microsoft YaHei'; font-size:16px;}
+.clear{clear:both;}
+.wrap{max-width:680px; margin:0 auto;}
+.menu{width:100%; padding:10px 0; background:#02a9ec; position:relative;}
+.menu a{position:absolute; color:#fff; left:0px; line-height:150%; left:5%; -webkit-tap-highlight-color:rgba(2,169,236,0);}
+.menu h3{width:100%; color:#fff; text-align:center; font-weight:normal;}
+.noclip{text-align:center; width:100%; height:135px; position: absolute; top: 50%; margin-top: -45px;}
+.nowifi{margin-top:-135px;}
+.nopic{ margin-top:15px;}
+.nolist{ position:absolute; left:70%; top:0;}
+.notxt{font-size:16px; color:#97aab8; text-align:center;font-size: 16px; margin-top:50px; }
+.reload{width:33%; background:#02a9ed; border-radius:3px; display:block; margin:50px auto; color:#fff; font-size:18px; text-align:center; padding:15px 10px;}
+</style>
+<link href="font-awesome/css/font-awesome.css" type="text/css" rel="stylesheet">
+<script>
+var getQueryString=function (name) {
+	var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+	var r = window.location.search.substr(1).match(reg);
+	if (r != null) return unescape(r[2]);
+	return null;
+}
+function reloadUrl(){
+	var url=getQueryString("url");
+	window.location.href = url;
+}
+</script>
+</head>
+
+<body>
+<div id="top">
+	<div class="menu">
+    	<h3>我的券<a class="fa fa-chevron-left" href="dface://close"></a></h3>
+	</div>
+</div>
+<div class="noclip nowifi">
+	<img src="images/no.jpg" class="nopic" width="33%" /><img src="images/nowifi.jpg" class="nolist" width="10%">
+	<p class="notxt">服务器泡妞去了。。。</p>
+	<a href="javascript:;" onclick="reloadUrl()" class="reload">重新加载</a>
+</div>
+</body>
+</html>
