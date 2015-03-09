@@ -26,7 +26,8 @@
 <div class="main">
   <div class="con"> </div>
 </div>
-<div class="loading"><div class="loadingLogo"><img src="images/logo.png" id="logo"/></div><p>脸脸正在吸取空气中<br/>全部电波为您加载...</p></div>
+<div class="titlehide"><div class="picbox" id="PicBox"><h3><a class="fa fa-chevron-left" href="javascript:window.history.back();"></a></h3></div></div>
+<div class="loading" style="display:none;"><div class="loadingLogo"><img src="images/logo.png" id="logo"/></div><p>脸脸正在吸取空气中<br/>全部电波为您加载...</p></div>
 <script id="detail" type="text/x-handlebars-template">
 	<div class="picbox" id="PicBox">
 	  <h3>{{name}}<a class="fa fa-chevron-left" href="javascript:window.history.back();"></a></h3>
@@ -106,12 +107,13 @@
 <script type="text/javascript" src="js/action/detailClickAction.js"></script>
 <script type="text/javascript">
 var password;
-$(document).ready(function(){
-  document.addEventListener('DfaceJSBridgeReady', function() {
-   DfaceJSBridge.callHandler('getLoc', null, function(response) {
-        getDetailData(response);
-    })
- }, false);
-});
+getDetailData();
+//$(document).ready(function(){
+  //document.addEventListener('DfaceJSBridgeReady', function() {
+  // DfaceJSBridge.callHandler('getLoc', null, function(response) {
+        //getDetailData();
+    //})
+ //}, false);
+//});
 </script>
 </html>

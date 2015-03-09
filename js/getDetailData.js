@@ -1,4 +1,5 @@
 var getDetailData =function (loc){
+	$('.loading').show();
 	var id = getUrlParam('id');
 	$.ajax({
 		type:'get',
@@ -8,6 +9,7 @@ var getDetailData =function (loc){
 		success: function(data){
 			password = data.password;
 			$('.loading').hide();
+			$('.titlehide').hide();
 			var detailTemplate = Handlebars.compile($("#detail").html());
 			var useBoxTemplate = Handlebars.compile($("#useBox").html());
 			Handlebars.registerHelper("compare",function(v1,v2,options){
