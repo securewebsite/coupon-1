@@ -21,6 +21,8 @@ var getDetailData =function (loc){
 			});
 			$('.con').append(detailTemplate(data));
 			$('#Box3').append(useBoxTemplate(data));
+			var _distance = $('.box2title span').html()/1000;
+			$('.box2title span').html(Math.round(_distance*10)/10+'公里');
 		},
 		error: function(XMLHttpRequest, textStatus, errorThrown){
 			$('.loading').hide();
