@@ -107,13 +107,13 @@
 <script type="text/javascript" src="js/action/detailClickAction.js"></script>
 <script type="text/javascript">
 var password;
-//getDetailData();
-$(document).ready(function(){
-  document.addEventListener('DfaceJSBridgeReady', function() {
-   DfaceJSBridge.callHandler('getLoc', null, function(response) {
-        getDetailData(response);
-    })
- }, false);
-});
+getDetailData();
+//$(document).ready(function(){
+//  document.addEventListener('DfaceJSBridgeReady', function() {
+//   DfaceJSBridge.callHandler('getLoc', null, function(response) {
+//        getDetailData(response);
+//    })
+// }, false);
+//});
 </script>
 </html>
